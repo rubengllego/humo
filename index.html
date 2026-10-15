@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barrutia Bar · Hoyo de Manzanares</title>
+<meta name="description" content="Barrutia Bar, el bar más cañero de Hoyo de Manzanares. Pizzas de José, raciones, terraza enorme y paella gratis de aperitivo los sábados y domingos.">
+<meta property="og:title" content="Barrutia Bar · Hoyo de Manzanares">
+<meta property="og:description" content="Pizzas, raciones, terraza y paella gratis de aperitivo los fines de semana.">
+<meta property="og:image" content="https://barrutiabar.es/wp-content/uploads/2024/02/IMG_0869-2.jpeg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23161210'/%3E%3Ctext x='32' y='50' font-family='Georgia,serif' font-size='48' font-weight='700' text-anchor='middle' fill='%23ece3d1'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: cartel de concierto / fanzine sobre papel de periódico — rótulo gótico como el logo de la casa, bandas negras para la paella y la historia */
+:root{
+  --paper:#ebe3d2;      /* papel de periódico */
+  --paper-2:#e1d7c2;
+  --ink:#161210;        /* tinta */
+  --ink-soft:#4a403a;
+  --red:#b8291f;        /* el rojo de los precios de su carta */
+  --tape:#d9c98f;
+  --black-band:#161210;
+  --on-black:#ece3d1;
+  --f-gothic:"UnifrakturMaguntia","Old English Text MT",Georgia,serif;
+  --f-cond:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;
+  background-image:
+    radial-gradient(rgba(22,18,16,.05) 1px,transparent 1px),
+    radial-gradient(rgba(22,18,16,.035) 1px,transparent 1px);
+  background-size:5px 5px,7px 7px;background-position:0 0,2px 3px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.label{font-family:var(--f-cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}
+h2{font-family:var(--f-cond);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.005em;font-size:clamp(2.2rem,5.5vw,3.6rem);margin:0;text-wrap:balance}
+h3{font-family:var(--f-cond);font-weight:700;text-transform:uppercase;margin:0;font-size:1.35rem;letter-spacing:.02em}
+
+/* barra */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);color:var(--on-black)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.top .brand{font-family:var(--f-gothic);font-size:1.7rem;line-height:1;text-decoration:none}
+.top nav{display:flex;gap:22px;align-items:center}
+.top nav a.l{font-family:var(--f-cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.9rem;text-decoration:none;opacity:.85}
+.top nav a.l:hover{opacity:1;color:#fff}
+@media (max-width:760px){.top nav a.l{display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-cond);font-weight:700;text-transform:uppercase;letter-spacing:.07em;font-size:1.05rem;text-decoration:none;padding:13px 22px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.red:hover{box-shadow:4px 4px 0 var(--ink)}
+.btn.small{padding:8px 14px;font-size:.92rem;border-color:var(--on-black);color:var(--on-black)}
+.btn.small:hover{box-shadow:3px 3px 0 var(--red)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-block:56px 72px}
+.hero .town{display:flex;gap:12px;align-items:center;color:var(--ink-soft)}
+.hero .town::before{content:"";width:36px;height:2px;background:var(--red)}
+.wordmark{font-family:var(--f-gothic);font-weight:400;font-size:clamp(4.6rem,13vw,9.5rem);line-height:.82;margin:18px 0 6px;letter-spacing:-.01em}
+.sub{font-family:var(--f-gothic);font-size:clamp(1.4rem,3vw,2rem);color:var(--red);margin:0 0 22px}
+.lede{font-size:1.15rem;max-width:34ch;margin:0 0 28px}
+.lede strong{font-weight:600}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.rating{display:flex;align-items:center;gap:12px;margin-top:28px;font-family:var(--f-cond);font-weight:600;font-size:1.05rem;letter-spacing:.03em}
+.rating .stars{color:var(--red);letter-spacing:2px;font-size:1.15rem}
+.photo{position:relative;background:#fff;padding:12px 12px 46px;box-shadow:0 18px 40px -18px rgba(22,18,16,.45);transform:rotate(1.6deg)}
+.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:contrast(1.05) saturate(1.05)}
+.photo figcaption{position:absolute;left:14px;right:14px;bottom:12px;font-family:var(--f-cond);font-weight:600;font-size:1rem;color:var(--ink-soft);letter-spacing:.03em}
+.photo::before,.photo::after{content:"";position:absolute;width:96px;height:28px;background:var(--tape);opacity:.85;top:-12px}
+.photo::before{left:-18px;transform:rotate(-24deg)}
+.photo::after{right:-18px;transform:rotate(22deg)}
+.stamp{position:absolute;left:-34px;bottom:64px;width:150px;height:150px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;transform:rotate(-12deg);box-shadow:0 10px 24px -10px rgba(0,0,0,.5);border:3px dashed rgba(255,255,255,.55);outline:6px solid var(--red)}
+.stamp span{font-family:var(--f-cond);font-weight:800;text-transform:uppercase;line-height:.95;font-size:1.05rem;letter-spacing:.03em}
+.stamp b{display:block;font-size:2rem}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:56px;padding-block:36px 64px}
+  .photo{max-width:440px;margin:0 auto;width:calc(100% - 24px)}
+  .stamp{left:-14px;width:124px;height:124px}
+  .stamp span{font-size:.9rem}.stamp b{font-size:1.6rem}
+}
+
+/* marquee */
+.ticker{background:var(--red);color:#fff;overflow:hidden;border-block:3px solid var(--ink)}
+.ticker .run{display:flex;gap:42px;white-space:nowrap;padding-block:12px;font-family:var(--f-cond);font-weight:800;text-transform:uppercase;font-size:1.35rem;letter-spacing:.06em;animation:run 32s linear infinite;width:max-content}
+.ticker .run span::after{content:"✦";margin-left:42px;opacity:.7}
+@keyframes run{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker .run{animation:none}}
+
+/* bandas negras */
+.band{background:var(--black-band);color:var(--on-black)}
+.band .label{color:#e6857c}
+
+/* paella */
+.paella .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center;padding-block:88px}
+.paella h2 em{font-style:normal;color:#e6857c}
+.paella p{max-width:46ch;opacity:.92;margin:18px 0 0}
+.facts{display:grid;grid-template-columns:repeat(3,auto);gap:28px;margin-top:32px;justify-content:start}
+.facts div{border-top:2px solid rgba(236,227,209,.35);padding-top:10px}
+.facts b{display:block;font-family:var(--f-cond);font-weight:800;font-size:2rem;line-height:1}
+.facts small{font-family:var(--f-cond);text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-size:.85rem}
+.paella .pic{position:relative}
+.paella .pic img{width:100%;aspect-ratio:4/3;object-fit:cover;border:3px solid var(--on-black)}
+@media (max-width:860px){.paella .wrap{grid-template-columns:1fr;gap:36px;padding-block:64px}.facts{grid-template-columns:repeat(3,1fr);gap:16px}.facts b{font-size:1.6rem}}
+
+/* carta */
+.carta .wrap{padding-block:88px}
+.carta-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+.tabs{display:flex;flex-wrap:wrap;gap:0;border:2px solid var(--ink)}
+.tabs button{font-family:var(--f-cond);font-weight:700;text-transform:uppercase;letter-spacing:.07em;font-size:1rem;padding:10px 18px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.tabs button+button{border-left:2px solid var(--ink)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.menu{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:14px 0;border-bottom:1px dashed rgba(22,18,16,.3);min-width:0}
+.item h4{margin:0;font-family:var(--f-cond);font-weight:700;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em;line-height:1.15}
+.item .p{font-family:var(--f-cond);font-weight:700;font-size:1.25rem;color:var(--red);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.item .p small{color:var(--ink-soft);font-weight:600;font-size:.95rem}
+.item p{margin:0;grid-column:1/-1;color:var(--ink-soft);font-size:.97rem}
+.tag{display:inline-block;font-family:var(--f-cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.72rem;background:var(--ink);color:var(--paper);padding:2px 7px;margin-left:8px;vertical-align:3px}
+.menu-note{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 28px;color:var(--ink-soft);font-size:.97rem}
+.menu-note b{color:var(--ink)}
+@media (max-width:760px){.menu{grid-template-columns:1fr}.tabs{width:100%;display:grid;grid-template-columns:1.3fr 1fr 1fr}.tabs button{padding:10px 6px;font-size:.9rem}}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.strip figure{margin:0;background:#fff;padding:8px 8px 34px;position:relative;box-shadow:0 10px 24px -14px rgba(22,18,16,.5)}
+.strip figure:nth-child(odd){transform:rotate(-1.4deg)}
+.strip figure:nth-child(even){transform:rotate(1.2deg)}
+.strip img{width:100%;aspect-ratio:1;object-fit:cover}
+.strip figcaption{position:absolute;left:10px;bottom:8px;font-family:var(--f-cond);font-weight:600;font-size:.98rem;color:var(--ink-soft)}
+@media (max-width:760px){.strip{grid-template-columns:repeat(2,1fr)}}
+
+/* historia */
+.historia .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding-block:88px;align-items:start}
+.historia .pic img{width:100%;aspect-ratio:4/3;object-fit:cover;border:3px solid var(--on-black)}
+.historia .pic p{font-size:.95rem;opacity:.75;margin:12px 0 0}
+.timeline{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:22px}
+.timeline li{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:baseline}
+.timeline .y{font-family:var(--f-cond);font-weight:800;font-size:2.2rem;line-height:1;color:#e6857c}
+.timeline p{margin:4px 0 0;opacity:.88;max-width:44ch}
+@media (max-width:860px){.historia .wrap{grid-template-columns:1fr;gap:40px;padding-block:64px}.timeline li{grid-template-columns:72px 1fr}.timeline .y{font-size:1.8rem}}
+
+/* opiniones */
+.ops .wrap{padding-block:88px}
+.ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
+.op{background:var(--paper-2);border:2px solid var(--ink);padding:24px;display:flex;flex-direction:column;gap:16px}
+.op q{font-family:var(--f-cond);font-weight:600;font-size:1.45rem;line-height:1.15;quotes:"«" "»"}
+.op .who{margin-top:auto;font-family:var(--f-cond);text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;color:var(--ink-soft)}
+.op .who .s{color:var(--red);letter-spacing:2px}
+@media (max-width:860px){.ops-grid{grid-template-columns:1fr}}
+
+/* visita */
+.visita .wrap{padding-block:88px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px}
+.hours{list-style:none;margin:24px 0 0;padding:0;border-top:2px solid var(--ink)}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:11px 4px;border-bottom:1px dashed rgba(22,18,16,.3);font-family:var(--f-cond);font-weight:600;font-size:1.2rem;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.hours li.off{color:var(--ink-soft);opacity:.7}
+.hours li.today{background:var(--ink);color:var(--paper);opacity:1}
+.hours li.today span:first-child::after{content:" · hoy";color:#e6857c}
+.info{display:grid;gap:22px;align-content:start}
+.info dl{margin:0;display:grid;gap:18px}
+.info dt{font-family:var(--f-cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;color:var(--red)}
+.info dd{margin:4px 0 0;font-size:1.1rem}
+.copy{margin-left:10px;font-family:var(--f-cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem;border:1.5px solid var(--ink);background:none;padding:3px 9px;cursor:pointer;color:var(--ink)}
+.perks{display:flex;flex-wrap:wrap;gap:8px}
+.perks span{font-family:var(--f-cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.85rem;border:1.5px solid var(--ink);padding:5px 10px}
+.reserve{background:var(--ink);color:var(--on-black);padding:26px}
+.reserve h3{font-size:1.6rem}
+.reserve p{margin:8px 0 18px;opacity:.85}
+.reserve .btn{border-color:var(--red)}
+@media (max-width:860px){.visita .wrap{grid-template-columns:1fr;padding-block:64px}}
+
+footer{background:var(--ink);color:var(--on-black)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-block:26px;font-family:var(--f-cond);letter-spacing:.06em;text-transform:uppercase;font-size:.88rem}
+footer .g{font-family:var(--f-gothic);text-transform:none;font-size:1.5rem;letter-spacing:0}
+footer a{opacity:.7;text-decoration:none}footer a:hover{opacity:1}
+
+.wa-float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.45);border:3px solid var(--ink)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Barrutia</a>
+    <nav aria-label="Secciones">
+      <a class="l" href="#paella">Paella</a>
+      <a class="l" href="#carta">Carta</a>
+      <a class="l" href="#historia">Historia</a>
+      <a class="l" href="#visita">Horario</a>
+      <a class="btn small" href="https://wa.me/34687716406?text=Hola%2C%20quer%C3%ADa%20reservar%20en%20Barrutia" target="_blank" rel="noopener">Reservar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="town label">Hoyo de Manzanares · desde 1980</div>
+        <h1 class="wordmark">Barrutia</h1>
+        <p class="sub">viandas &amp; bebercios</p>
+        <p class="lede">El bar más cañero de Hoyo. <strong>Pizzas de José, raciones para compartir, una terraza enorme</strong> y paella gratis de aperitivo todos los fines de semana.</p>
+        <div class="ctas">
+          <a class="btn red" href="https://wa.me/34687716406?text=Hola%2C%20quer%C3%ADa%20reservar%20en%20Barrutia" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.2 1.5Z"/></svg>
+            Reservar por WhatsApp
+          </a>
+          <a class="btn" href="#carta">Ver la carta</a>
+        </div>
+        <div class="rating"><span class="stars" aria-hidden="true">★★★★★</span> 4,7 en Google · más de 550 reseñas</div>
+      </div>
+      <figure class="photo">
+        <img src="img/paella-barra.jpg" alt="Paella gigante en la barra del Barrutia con clientes alrededor" fetchpriority="high">
+        <figcaption>Domingo de paella en el Barrutia</figcaption>
+        <div class="stamp"><span>Paella<b>gratis</b>sáb y dom</span></div>
+      </figure>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="run">
+      <span>Paella gratis sáb y dom</span><span>Pizzas también sin gluten</span><span>Terraza enorme</span><span>Perros bienvenidos</span><span>El Pollazo de Gloria</span><span>Torreznos con miel</span>
+      <span>Paella gratis sáb y dom</span><span>Pizzas también sin gluten</span><span>Terraza enorme</span><span>Perros bienvenidos</span><span>El Pollazo de Gloria</span><span>Torreznos con miel</span>
+    </div>
+  </div>
+
+  <section class="band paella" id="paella">
+    <div class="wrap">
+      <div class="pic"><img src="img/paella-terraza.jpg" alt="Paellera gigante en la terraza del Barrutia" loading="lazy"></div>
+      <div>
+        <div class="label">La tradición de los findes</div>
+        <h2>Los fines de semana <em>saben a paella</em></h2>
+        <p>Cada sábado y domingo hacemos una paella gigante y la sacamos de aperitivo. Gratis, sin reservar: te pides algo, te sientas en la terraza y la paella llega a la mesa. Se junta medio pueblo, suena buena música y con buen tiempo cuesta irse a casa.</p>
+        <div class="facts">
+          <div><b>Sáb · Dom</b><small>Cada fin de semana</small></div>
+          <div><b>14:00</b><small>Sale la paella</small></div>
+          <div><b>0 €</b><small>Va de aperitivo</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="carta" id="carta">
+    <div class="wrap">
+      <div class="carta-head">
+        <div>
+          <div class="label" style="color:var(--red)">La carta</div>
+          <h2>Pizzas, viandas<br>y algo dulce</h2>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Secciones de la carta">
+          <button role="tab" id="t-pizzas" aria-selected="true" aria-controls="p-pizzas">Pizzas de José</button>
+          <button role="tab" id="t-viandas" aria-selected="false" aria-controls="p-viandas">Viandas</button>
+          <button role="tab" id="t-postres" aria-selected="false" aria-controls="p-postres">Postres</button>
+        </div>
+      </div>
+
+      <div class="menu" role="tabpanel" id="p-pizzas" aria-labelledby="t-pizzas">
+        <div class="item"><h4>Margarita</h4><span class="p">11 €</span><p>Solo el tomate y la mozzarella.</p></div>
+        <div class="item"><h4>Berberechos</h4><span class="p">13 €</span><p>Con o sin mozzarella, berberechos, ajito y perejil.</p></div>
+        <div class="item"><h4>Carbonara</h4><span class="p">13 €</span><p>Champi, bacon, cebolla y nata.</p></div>
+        <div class="item"><h4>Boloñesa</h4><span class="p">13 €</span><p>Carne picada y nuestra salsa boloñesa.</p></div>
+        <div class="item"><h4>Sofía BBQ</h4><span class="p">13 €</span><p>Carne picada, bacon y salsa barbacoa.</p></div>
+        <div class="item"><h4>Vegetal</h4><span class="p">12 €</span><p>Calabacín, champi, cebolla y pimiento.</p></div>
+        <div class="item"><h4>Neptuno</h4><span class="p">13 €</span><p>Atún y cebolla.</p></div>
+        <div class="item"><h4>Jamón</h4><span class="p">12 €</span><p>Con jamón york. Así de sencilla y rica.</p></div>
+        <div class="item"><h4>Caprichosa</h4><span class="p">14 €</span><p>Jamón, champi, chorizo y un huevo tirao al medio.</p></div>
+        <div class="item"><h4>4 Quesos</h4><span class="p">12 €</span><p>Mozzarella, queso azul, cheddar y philadelphia.</p></div>
+        <div class="item"><h4>Napolitana</h4><span class="p">13 €</span><p>Con anchoas. Sabrosísima.</p></div>
+        <div class="item"><h4>Minutejos<span class="tag">De la casa</span></h4><span class="p">13 €</span><p>Oreja muy fina, ajito y perejil.</p></div>
+        <div class="item"><h4>De Zarajos</h4><span class="p">13 €</span><p>Zarajos laminados y aliñados con ajito y perejil.</p></div>
+        <div class="item"><h4>De Torreznos</h4><span class="p">13 €</span><p>Con torrezno de Soria.</p></div>
+        <div class="item"><h4>Romana</h4><span class="p">12 €</span><p>Champi, jamón y cebolla.</p></div>
+        <div class="item"><h4>Pulpo a la gallega</h4><span class="p">14 €</span><p>Pulpito, pimentón de la Vera y AOVE.</p></div>
+      </div>
+
+      <div class="menu" role="tabpanel" id="p-viandas" aria-labelledby="t-viandas" hidden>
+        <div class="item"><h4>Ensaladilla rusa</h4><span class="p">12 € <small>· ½ 7 €</small></span><p>Con langostinos y mayonesa de langostinos.</p></div>
+        <div class="item"><h4>Patatas fritas caseras</h4><span class="p">8 € <small>· ½ 5 €</small></span><p>Elige tu salsa: kétchup, barbacoa, alioli…</p></div>
+        <div class="item"><h4>Huevos rotos Barrutia</h4><span class="p">14 €</span><p>Patatas caseras, boloñesa, mozzarella y tres huevos.</p></div>
+        <div class="item"><h4>Champis a la plancha</h4><span class="p">12 €</span><p>Champiñones a la plancha.</p></div>
+        <div class="item"><h4>Calamares a la romana</h4><span class="p">13 €</span><p>Las anillas con sus rejos.</p></div>
+        <div class="item"><h4>Croquetas de jamón ibérico</h4><span class="p">16 € <small>· 4 ud 9 €</small></span><p>Ocho unidades por ración.</p></div>
+        <div class="item"><h4>Croquetas gorgonzola y nuez<span class="tag">Sin gluten</span></h4><span class="p">16 € <small>· 4 ud 9 €</small></span><p>Ocho unidades por ración.</p></div>
+        <div class="item"><h4>El Pollazo de Gloria<span class="tag">De la casa</span></h4><span class="p">14 €</span><p>Reducido con vino, birra y miel. Vas a mojar pan.</p></div>
+        <div class="item"><h4>Morcilla de Burgos</h4><span class="p">12 € <small>· ½ 7 €</small></span><p>Finita y crujiente.</p></div>
+        <div class="item"><h4>Zarajo a los cítricos</h4><span class="p">6 € <small>/ ud</small></span><p>Por unidad.</p></div>
+        <div class="item"><h4>Tortilla de Betanzos</h4><span class="p">16 €</span><p>Jugosa por dentro, de las que se esparraman.</p></div>
+        <div class="item"><h4>Ensalada Burratia</h4><span class="p">16 €</span><p>Para dos. Hortalizas de temporada, burrata y vinagreta de mostaza y miel.</p></div>
+        <div class="item"><h4>Ensalada LTC</h4><span class="p">7 €</span><p>Lechuga, tomate y cebolla.</p></div>
+        <div class="item"><h4>Crujiente de huevo</h4><span class="p">2,50 € <small>/ ud</small></span><p>Yema trufada dentro de un finísimo sobre de patata frita.</p></div>
+        <div class="item"><h4>Chanquetes con huevo</h4><span class="p">16 €</span><p>Huevos rotos con pezqueñines.</p></div>
+        <div class="item"><h4>Langostinos rebozados</h4><span class="p">14 €</span><p>Rebozados en panko, con mayonesa de soja.</p></div>
+        <div class="item"><h4>Combo para triperos</h4><span class="p">15 €</span><p>Dos croquetas, dos torpedos y dos crujientes de huevo.</p></div>
+        <div class="item"><h4>Hamburguesa</h4><span class="p">12,50 €</span><p>220 g de vacuno, lechuga, tomate, cebolla, queso, bacon y patatas fritas.</p></div>
+      </div>
+
+      <div class="menu" role="tabpanel" id="p-postres" aria-labelledby="t-postres" hidden>
+        <div class="item"><h4>Brownie</h4><span class="p">4,50 €</span><p>Con nata recién montada y helado de vainilla.</p></div>
+        <div class="item"><h4>Borrachito</h4><span class="p">4,50 €</span><p>Bizcocho borracho de almíbar de ron con nata montada.</p></div>
+        <div class="item"><h4>Pizza de Nutella</h4><span class="p">8 €</span><p>Qué quieres que te expliquemos…</p></div>
+      </div>
+
+      <div class="menu-note">
+        <span><b>Masa sin gluten</b> para cualquier pizza, pídela.</span>
+        <span>Todas las pizzas llevan tomate natural triturado, mozzarella y orégano.</span>
+        <span>¿No ves lo que buscas? Pregunta, que seguro que hay algo más.</span>
+      </div>
+
+      <div class="strip">
+        <figure><img src="img/pizza.jpg" alt="Pizza recién salida del horno" loading="lazy"><figcaption>Pizzas de José</figcaption></figure>
+        <figure><img src="img/croquetas.jpg" alt="Plato de croquetas caseras" loading="lazy"><figcaption>Croquetas caseras</figcaption></figure>
+        <figure><img src="img/huevos.jpg" alt="Huevos rotos con patatas" loading="lazy"><figcaption>Huevos rotos Barrutia</figcaption></figure>
+        <figure><img src="img/burger.jpg" alt="Hamburguesa de la casa" loading="lazy"><figcaption>La hamburguesa</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band historia" id="historia">
+    <div class="wrap">
+      <div>
+        <div class="label">Un bar de familia</div>
+        <h2>De Las Eras a Barrutia</h2>
+        <ol class="timeline">
+          <li><span class="y">1980</span><div><h3>Abre el Bar Las Eras</h3><p>José Barrutia monta el bar donde antes estaban las eras del pueblo. Se convierte en el sitio de siempre para los vecinos de Hoyo.</p></div></li>
+          <li><span class="y">Hoy</span><div><h3>Gloria y Roberto</h3><p>Sus hijos cogen el relevo con las mismas ganas. Detrás de la barra y en la cocina, el bar sigue siendo cosa de familia.</p></div></li>
+          <li><span class="y">2023</span><div><h3>Nace Barrutia Bar</h3><p>Las Eras se renueva y pasa a llamarse Barrutia. Misma esencia, carta reinventada y la tradición de la paella de los findes.</p></div></li>
+        </ol>
+      </div>
+      <div class="pic">
+        <img src="img/mural.jpg" alt="Interior del Barrutia con el mural de grafiti" loading="lazy">
+        <p>Dentro, el mural de la casa. Fuera, una terraza enorme con la sierra de fondo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ops">
+    <div class="wrap">
+      <div class="label" style="color:var(--red)">Lo que dice la gente</div>
+      <h2>Más de 550 reseñas<br>en Google</h2>
+      <div class="ops-grid">
+        <figure class="op"><q>Ambientazo que da vida al pueblo, y negocio familiar.</q><figcaption class="who"><span class="s">★★★★★</span><br>Vanesa · Google</figcaption></figure>
+        <figure class="op"><q>Excelente paella, excelente trato y excelente calidad.</q><figcaption class="who"><span class="s">★★★★★</span><br>Cliente de domingo · Google</figcaption></figure>
+        <figure class="op"><q>Nos dejaron cenar dentro con los perros. Probad los torreznos con miel.</q><figcaption class="who"><span class="s">★★★★★</span><br>Vecinos nuevos de Hoyo · Google</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="visita" id="visita" style="border-top:3px solid var(--ink)">
+    <div class="wrap">
+      <div>
+        <div class="label" style="color:var(--red)">Horario</div>
+        <h2>Cuándo estamos</h2>
+        <ul class="hours" id="hours">
+          <li data-d="1" class="off"><span>Lunes</span><span>Cerrado</span></li>
+          <li data-d="2" class="off"><span>Martes</span><span>Cerrado</span></li>
+          <li data-d="3" class="off"><span>Miércoles</span><span>Cerrado</span></li>
+          <li data-d="4"><span>Jueves</span><span>19:00 – 01:00</span></li>
+          <li data-d="5"><span>Viernes</span><span>18:00 – 02:00</span></li>
+          <li data-d="6"><span>Sábado</span><span>11:00 – 02:00</span></li>
+          <li data-d="0"><span>Domingo</span><span>11:00 – 18:00</span></li>
+        </ul>
+      </div>
+      <div class="info">
+        <dl>
+          <div><dt>Dónde</dt><dd>Av. de la Cabilda, 4<br>28240 Hoyo de Manzanares, Madrid</dd></div>
+          <div><dt>Teléfono y WhatsApp</dt><dd><span id="tel">687 71 64 06</span><button class="copy" type="button" id="copyTel">Copiar</button></dd></div>
+        </dl>
+        <div class="perks"><span>Terraza</span><span>Perros bienvenidos</span><span>Opciones sin gluten</span><span>Accesible</span></div>
+        <div class="reserve">
+          <h3>¿Venís en grupo?</h3>
+          <p>Reserva el día antes por WhatsApp con el día, la hora y cuántos sois.</p>
+          <div class="ctas">
+            <a class="btn red" href="https://wa.me/34687716406?text=Hola%2C%20quer%C3%ADa%20reservar%20en%20Barrutia" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            <a class="btn small" href="https://www.google.com/maps/search/?api=1&amp;query=Barrutia%20Bar%2C%20Av.%20de%20la%20Cabilda%204%2C%20Hoyo%20de%20Manzanares" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="g">Barrutia</span>
+    <span>© Barrutia Bar · Hoyo de Manzanares</span>
+    <a href="https://lacedev.com" target="_blank" rel="noopener">Web hecha por Lace</a>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/34687716406?text=Hola%2C%20quer%C3%ADa%20reservar%20en%20Barrutia" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.2 1.5Z"/></svg>
+</a>
+
+<script>
+// Pestañas de la carta
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(o){
+        var on=o===t;o.setAttribute('aria-selected',on?'true':'false');
+        document.getElementById(o.getAttribute('aria-controls')).hidden=!on;
+      });
+    });
+  });
+})();
+// Día de hoy en el horario
+try{var el=document.querySelector('#hours li[data-d="'+new Date().getDay()+'"]');if(el)el.classList.add('today');}catch(e){}
+// Copiar teléfono
+document.getElementById('copyTel').addEventListener('click',function(){
+  var b=this,txt=document.getElementById('tel').textContent;
+  var done=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600)};
+  var sel=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('tel'));var s=getSelection();s.removeAllRanges();s.addRange(r)};
+  try{navigator.clipboard.writeText(txt).then(done,sel)}catch(e){sel()}
+});
+</script>
+</body>
+</html>
