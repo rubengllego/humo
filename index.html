@@ -133,7 +133,13 @@ h3{font-family:var(--f-head);font-weight:400;font-size:1.7rem;letter-spacing:.02
 .ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
 .op{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin:0;display:flex;flex-direction:column;gap:14px}
 .op q{font-size:1.15rem;line-height:1.45;font-weight:500;quotes:"“" "”"}
-.op figcaption{margin-top:auto;font-size:.9rem;color:var(--ink-soft)}
+a.op{text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+a.op:hover{border-color:var(--sun-deep);transform:translateY(-2px)}
+.op .who{margin-top:auto;font-size:.9rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px}
+.op .who b{color:var(--ink);font-weight:600}
+.op .g{color:var(--sun-deep);font-weight:600}
+.ops-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:26px;color:var(--ink-soft)}
+.ops-foot b{color:var(--ink);font-size:1.3rem}
 .op .s{color:var(--sun-deep);letter-spacing:2px}
 @media (max-width:860px){.ops-grid{grid-template-columns:1fr}}
 
@@ -323,9 +329,13 @@ footer a{text-decoration:none}footer a:hover{color:var(--sun-deep)}
       <div class="eyebrow">Lo que dicen en Google</div>
       <h2>Para el aperitivo o para comer</h2>
       <div class="ops-grid">
-        <figure class="op"><span class="s">★★★★★</span><q>El trato familiar y muy agradable para tomar aperitivo o comer.</q><figcaption>Libia D.</figcaption></figure>
-        <figure class="op"><span class="s">★★★★★</span><q>Un detalle la uva helada en el vino, ¡me encanta!</q><figcaption>Esther G.</figcaption></figure>
-        <figure class="op"><span class="s">★★★★★</span><q>Un gran descubrimiento, seguro que volveremos pronto.</q><figcaption>Cliente en Google</figcaption></figure>
+        <a class="op" href="https://www.google.com/maps/place/?q=place_id:ChIJmelORbB3QQ0RbR_tNpKow84" target="_blank" rel="noopener"><span class="s">★★★★★</span><q>El trato familiar y muy agradable para tomar aperitivo o comer.</q><span class="who"><b>Libia D.</b> · Local Guide<span class="g">Ver en Google ↗</span></span></a>
+        <a class="op" href="https://www.google.com/maps/place/?q=place_id:ChIJmelORbB3QQ0RbR_tNpKow84" target="_blank" rel="noopener"><span class="s">★★★★★</span><q>Un detalle la uva helada en el vino, ¡me encanta!</q><span class="who"><b>Esther G.</b> · Local Guide<span class="g">Ver en Google ↗</span></span></a>
+        <a class="op" href="https://www.google.com/maps/place/?q=place_id:ChIJmelORbB3QQ0RbR_tNpKow84" target="_blank" rel="noopener"><span class="s">★★★★★</span><q>Un gran descubrimiento, seguro que volveremos pronto.</q><span class="who"><b>Reseña en Google</b><span class="g">Ver en Google ↗</span></span></a>
+      </div>
+      <div class="ops-foot">
+        <span><b>4,1</b> <span class="s">★★★★</span> · 79 reseñas en Google</span>
+        <a class="btn" href="https://www.google.com/maps/place/?q=place_id:ChIJmelORbB3QQ0RbR_tNpKow84" target="_blank" rel="noopener">Ver todas las reseñas en Google ↗</a>
       </div>
     </div>
   </section>
