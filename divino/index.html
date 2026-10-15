@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Divino Lounge Bar · Hoyo de Manzanares</title>
+<meta name="description" content="Divino Lounge Bar en Hoyo de Manzanares: aperitivos, cervezas bien frías, copas, fútbol y buen ambiente en la calle Hurtada.">
+<meta property="og:title" content="Divino Lounge Bar · Hoyo de Manzanares">
+<meta property="og:description" content="Aperitivos con tapa, cervezas heladas, copas, fútbol y música. Calle Hurtada, 2.">
+<meta property="og:image" content="img/fachada.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314161a'/%3E%3Cpath d='M18 14h28l-14 18zM32 32v14M22 50h20' stroke='%23b8e04a' stroke-width='4' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;700&display=swap">
+<style>
+/* Layout: el bar de noche — fondo oscuro como la barra, el verde lima de sus toldos como único neón, fotos de la terraza y de la caña con tapa */
+:root{
+  --bg:#121417;
+  --bg-2:#1b1e23;
+  --fg:#f1efe8;
+  --fg-soft:#a9adb4;
+  --lime:#b8e04a;       /* el verde de los toldos */
+  --amber:#f2a93b;      /* la cerveza */
+  --line:rgba(241,239,232,.13);
+  --f-display:"Unbounded","Arial Black",sans-serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.tag{font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;color:var(--lime)}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.05;margin-top:10px}
+h3{font-size:1.05rem;font-weight:500;letter-spacing:.01em}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(18,20,23,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:10px;position:relative}
+.brand{font-family:var(--f-display);font-weight:700;font-size:1.15rem;letter-spacing:.08em;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--lime)}
+.nav{display:flex;align-items:center;gap:22px}
+.nav a.l{text-decoration:none;font-weight:700;font-size:.93rem;color:var(--fg-soft)}
+.nav a.l:hover{color:var(--lime)}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--fg);background:transparent;color:var(--fg);align-items:center;justify-content:center;cursor:pointer;padding:0;flex:none}
+.burger span{display:block;width:18px;height:2px;background:currentColor;position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:currentColor;transition:transform .2s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+.panel{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 22px 30px -20px rgba(0,0,0,.8);padding:6px max(18px,env(safe-area-inset-right,0px)) 20px max(18px,env(safe-area-inset-left,0px))}
+.panel a{display:flex;justify-content:space-between;align-items:center;padding:14px 2px;text-decoration:none;font-weight:700;font-size:1.05rem;border-bottom:1px solid var(--line)}
+.panel a::after{content:"\2192";opacity:.45}
+.panel a.cta{justify-content:center;margin-top:16px;border:0;border-radius:999px;background:var(--lime);color:#14161a;padding:14px}
+.panel a.cta::after{content:none}
+@media (max-width:820px){.nav a.l{display:none}.burger{display:inline-flex}.nav{gap:8px}}
+@media (min-width:821px){.panel{display:none!important}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:1rem;text-decoration:none;padding:13px 24px;border-radius:999px;border:1.5px solid var(--fg);color:var(--fg);background:transparent;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.lime{background:var(--lime);border-color:var(--lime);color:#14161a}
+.btn.sm{padding:8px 16px;font-size:.9rem}
+.btn svg{width:19px;height:19px;flex:none}
+
+.hero{position:relative;overflow:hidden}
+.hero .bgimg{position:absolute;inset:0;background:url("img/fachada.jpg") center/cover;opacity:.35}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,20,23,.2),var(--bg) 92%)}
+.hero .wrap{position:relative;z-index:1;padding-block:110px 70px}
+.hero h1{font-size:clamp(3rem,10vw,6.4rem);line-height:.92;letter-spacing:.02em}
+.hero h1 span{display:block;color:var(--lime);font-size:.36em;letter-spacing:.32em;margin-top:14px}
+.hero .lede{max-width:46ch;color:#d9d7cf;margin:24px 0 28px;font-size:1.08rem}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.rating{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:26px;color:var(--fg-soft);font-size:.95rem}
+.rating b{font-family:var(--f-display);font-size:1.4rem;color:var(--fg)}
+.stars{color:var(--amber);letter-spacing:2px}
+
+.plan .wrap{padding-block:80px}
+.plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.plan-grid article{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+.plan-grid .ico{width:42px;height:42px;border-radius:12px;background:rgba(184,224,74,.12);display:grid;place-items:center;margin-bottom:14px}
+.plan-grid svg{width:24px;height:24px;stroke:var(--lime);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.plan-grid p{margin:6px 0 0;color:var(--fg-soft);font-size:.95rem}
+@media (max-width:980px){.plan-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.plan-grid{grid-template-columns:1fr}}
+
+.fotos .wrap{padding-block:20px 80px}
+.mosaic{display:grid;grid-template-columns:1.4fr .7fr;grid-template-rows:auto auto;gap:14px;margin-top:28px}
+.mosaic figure{margin:0;position:relative;min-width:0}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:18px}
+.mosaic figure:nth-child(1) img{aspect-ratio:16/8}
+.mosaic figure:nth-child(2){grid-row:span 2}
+.mosaic figure:nth-child(2) img{aspect-ratio:auto}
+.mosaic figure:nth-child(3) img{aspect-ratio:16/8}
+.mosaic figcaption{position:absolute;left:12px;bottom:12px;background:rgba(18,20,23,.82);border-radius:999px;padding:4px 12px;font-size:.85rem;font-weight:700}
+@media (max-width:760px){.mosaic{grid-template-columns:1fr}.mosaic figure:nth-child(2){grid-row:auto}.mosaic figure:nth-child(2) img{aspect-ratio:4/5}}
+
+.beni{background:var(--bg-2);border-block:1px solid var(--line)}
+.beni .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-block:80px}
+.beni p{color:var(--fg-soft);max-width:46ch}
+.beni img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px}
+@media (max-width:860px){.beni .wrap{grid-template-columns:1fr;gap:34px;padding-block:60px}}
+
+.ops .wrap{padding-block:80px}
+.ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.op{border:1px solid var(--line);border-radius:18px;padding:24px;background:var(--bg-2);display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;transition:border-color .15s}
+.op:hover{border-color:var(--lime)}
+.op q{font-size:1.1rem;line-height:1.45;font-weight:500;quotes:"“" "”"}
+.op .who{margin-top:auto;font-size:.88rem;color:var(--fg-soft)}
+.ops-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:26px;color:var(--fg-soft)}
+.ops-foot b{font-family:var(--f-display);font-size:1.3rem;color:var(--fg)}
+@media (max-width:900px){.ops-grid{grid-template-columns:1fr}}
+
+.visita{background:var(--lime);color:#14161a}
+.visita .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding-block:80px}
+.visita .tag{color:#14161a;opacity:.7}
+.hours{list-style:none;margin:22px 0 0;padding:0}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid rgba(20,22,26,.18);font-variant-numeric:tabular-nums;font-weight:500}
+.hours li.today{font-weight:700}
+.hours li.today span:first-child::after{content:" · hoy"}
+.hours li.off span:last-child{opacity:.55}
+dl{margin:22px 0 0;display:grid;gap:18px}
+dt{font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;opacity:.7}
+dd{margin:4px 0 0;font-size:1.1rem;font-weight:500}
+.copy{margin-left:10px;font:700 .74rem var(--f-body);letter-spacing:.08em;text-transform:uppercase;border:1.5px solid rgba(20,22,26,.5);background:none;color:#14161a;padding:3px 10px;border-radius:6px;cursor:pointer}
+.visita .ctas{margin-top:28px}
+.visita .btn{border-color:#14161a;color:#14161a}
+.visita .btn.dark{background:#14161a;color:var(--lime)}
+@media (max-width:860px){.visita .wrap{grid-template-columns:1fr;gap:40px;padding-block:60px}}
+
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:22px;font-size:.9rem;color:var(--fg-soft)}
+footer a{text-decoration:none}footer a:hover{color:var(--lime)}
+
+.wa-float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:25;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.6)}
+.wa-float svg{width:28px;height:28px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.2 1.5Z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">DIVINO<span>·</span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a class="l" href="#plan">El plan</a>
+      <a class="l" href="#fotos">Fotos</a>
+      <a class="l" href="#opiniones">Opiniones</a>
+      <a class="l" href="#visita">Horario</a>
+      <a class="btn sm lime" href="https://wa.me/34639959073?text=Hola%20Beni%2C%20quer%C3%ADa%20preguntar%20por%20Divino" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="burger" type="button" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="panel"><span></span></button>
+    </nav>
+    <div class="panel" id="panel" role="navigation" aria-label="Menú de la web" hidden>
+      <a href="#inicio">Inicio</a>
+      <a href="#plan">El plan</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#visita">Horario y cómo llegar</a>
+      <a class="cta" href="https://wa.me/34639959073?text=Hola%20Beni%2C%20quer%C3%ADa%20preguntar%20por%20Divino" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="bgimg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="tag">Calle Hurtada, 2 · Hoyo de Manzanares</div>
+      <h1 style="margin-top:14px">DIVINO<span>LOUNGE BAR</span></h1>
+      <p class="lede">El aperitivo con su tapa, la caña helada en la terraza, el partido con los colegas y la copa de después de cenar. Con música, buen rollo y Beni detrás de la barra.</p>
+      <div class="ctas">
+        <a class="btn lime" href="https://wa.me/34639959073?text=Hola%20Beni%2C%20quer%C3%ADa%20preguntar%20por%20Divino" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Escribir por WhatsApp</a>
+        <a class="btn" href="#visita">Ver horario</a>
+      </div>
+      <div class="rating"><b>4,6</b><span class="stars">★★★★★</span><span>86 reseñas en Google</span></div>
+    </div>
+  </section>
+
+  <section class="plan" id="plan">
+    <div class="wrap">
+      <div class="tag">El plan</div>
+      <h2>Del aperitivo a la última copa</h2>
+      <div class="plan-grid">
+        <article><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10l-1 18H8z"/><path d="M7.5 8h9"/></svg></div><h3>Cerveza helada</h3><p>De muchos tipos y siempre al borde de la congelación.</p></article>
+        <article><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h16M6 13a6 6 0 0 0 12 0"/><path d="M9 9c0-2 1-3 3-3s3 1 3 3"/></svg></div><h3>Aperitivo con tapa</h3><p>Cada caña con su tapa, preparada por el jefe.</p></article>
+        <article><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Fútbol y música</h3><p>Los partidos en la tele y buena música para alargar la tarde.</p></article>
+        <article><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12l-6 8z"/><path d="M12 11v8M8 21h8"/></svg></div><h3>Copas</h3><p>Combinados y cócteles para después de cenar, hasta las 2:30.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="fotos" id="fotos">
+    <div class="wrap">
+      <div class="tag">Fotos</div>
+      <h2>Así se está en Divino</h2>
+      <div class="mosaic">
+        <figure><img src="img/aperitivo.jpg" alt="Cañas y tapas de gambas en la barra de Divino" loading="lazy"><figcaption>Caña y tapa</figcaption></figure>
+        <figure><img src="img/copa.jpg" alt="Copa de ron con cola y hielo" loading="lazy"><figcaption>La copa</figcaption></figure>
+        <figure><img src="img/terraza.jpg" alt="Caña con tapa en la terraza de Divino" loading="lazy"><figcaption>La terraza</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="beni">
+    <div class="wrap">
+      <img src="img/fachada.jpg" alt="Fachada de Divino Lounge Bar con su toldo verde y la terraza" loading="lazy">
+      <div>
+        <div class="tag">La casa</div>
+        <h2>Un bar de pueblo con ambiente de los buenos</h2>
+        <p>Beni, el dueño, se encarga de que todo el mundo esté a gusto y monta eventos de vez en cuando. Si quieres celebrar algo o reservar para ver un partido con los amigos, escríbele.</p>
+        <div class="ctas" style="margin-top:24px">
+          <a class="btn lime" href="https://wa.me/34639959073?text=Hola%20Beni%2C%20quer%C3%ADa%20preguntar%20por%20un%20evento%20en%20Divino" target="_blank" rel="noopener">Preguntar por un evento</a>
+          <a class="btn" href="https://www.instagram.com/bardivinolounge/" target="_blank" rel="noopener">Instagram ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ops" id="opiniones">
+    <div class="wrap">
+      <div class="tag">Lo que dicen en Google</div>
+      <h2>Ambiente de 10</h2>
+      <div class="ops-grid">
+        <a class="op" href="https://www.google.com/maps/place/?q=place_id:ChIJR93LYWJ3QQ0RreP4tuRsB_o" target="_blank" rel="noopener"><span class="stars">★★★★★</span><q>Buenos aperitivos, cerveza muy fría y dueño súper agradable.</q><span class="who">Reseña en Google</span></a>
+        <a class="op" href="https://www.google.com/maps/place/?q=place_id:ChIJR93LYWJ3QQ0RreP4tuRsB_o" target="_blank" rel="noopener"><span class="stars">★★★★★</span><q>Una maravilla de sitio para estar con los colegas.</q><span class="who">Eduardo F. · Local Guide</span></a>
+        <a class="op" href="https://www.google.com/maps/place/?q=place_id:ChIJR93LYWJ3QQ0RreP4tuRsB_o" target="_blank" rel="noopener"><span class="stars">★★★★★</span><q>Excelentes aperitivos y las cervezas siempre al borde de la congelación.</q><span class="who">José Arturo F.</span></a>
+      </div>
+      <div class="ops-foot">
+        <span><b>4,6</b> <span class="stars">★★★★★</span> · 86 reseñas en Google</span>
+        <a class="btn" href="https://www.google.com/maps/place/?q=place_id:ChIJR93LYWJ3QQ0RreP4tuRsB_o" target="_blank" rel="noopener">Ver todas en Google ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="visita" id="visita">
+    <div class="wrap">
+      <div>
+        <div class="tag">Horario</div>
+        <h2>Cuándo abrimos</h2>
+        <ul class="hours" id="hours">
+          <li data-d="1" class="off"><span>Lunes</span><span>Cerrado</span></li>
+          <li data-d="2"><span>Martes</span><span>17:30 – 2:30</span></li>
+          <li data-d="3"><span>Miércoles</span><span>12:30 – 2:30</span></li>
+          <li data-d="4"><span>Jueves</span><span>12:30 – 2:30</span></li>
+          <li data-d="5"><span>Viernes</span><span>12:30 – 2:30</span></li>
+          <li data-d="6"><span>Sábado</span><span>12:30 – 2:30</span></li>
+          <li data-d="0"><span>Domingo</span><span>12:30 – 00:00</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="tag">Dónde estamos</div>
+        <h2>En la calle Hurtada</h2>
+        <dl>
+          <div><dt>Dirección</dt><dd>C/ Hurtada, 2-4<br>28240 Hoyo de Manzanares, Madrid</dd></div>
+          <div><dt>Teléfono y WhatsApp</dt><dd><span id="tel">639 95 90 73</span><button class="copy" type="button" id="copyTel">Copiar</button></dd></div>
+          <div><dt>Instagram</dt><dd>@bardivinolounge</dd></div>
+        </dl>
+        <div class="ctas">
+          <a class="btn dark" href="https://wa.me/34639959073?text=Hola%20Beni%2C%20quer%C3%ADa%20preguntar%20por%20Divino" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+          <a class="btn" href="https://www.google.com/maps/place/?q=place_id:ChIJR93LYWJ3QQ0RreP4tuRsB_o" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Divino Lounge Bar · Hoyo de Manzanares</span>
+    <a href="https://lacedev.com" target="_blank" rel="noopener">Web hecha por Lace</a>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/34639959073?text=Hola%20Beni%2C%20quer%C3%ADa%20preguntar%20por%20Divino" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),p=document.getElementById('panel'),h=document.querySelector('.top');
+  function set(o){p.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú');}
+  b.addEventListener('click',function(e){e.stopPropagation();set(p.hidden);});
+  p.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+  document.addEventListener('click',function(e){if(!p.hidden&&!h.contains(e.target))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden){set(false);b.focus();}});
+  window.addEventListener('resize',function(){if(innerWidth>820)set(false);});
+  try{var el=document.querySelector('#hours li[data-d="'+new Date().getDay()+'"]');if(el)el.classList.add('today');}catch(e){}
+  document.getElementById('copyTel').addEventListener('click',function(){
+    var bt=this,txt=document.getElementById('tel').textContent;
+    var done=function(){bt.textContent='Copiado';setTimeout(function(){bt.textContent='Copiar'},1600)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('tel'));var s=getSelection();s.removeAllRanges();s.addRange(r)};
+    try{navigator.clipboard.writeText(txt).then(done,sel)}catch(e){sel()}
+  });
+})();
+</script>
+</body>
+</html>
