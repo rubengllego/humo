@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Arcoteo Bar · Plaza de los Arcos, Colmenar Viejo</title>
+<meta name="description" content="Arcoteo Bar en la Plaza de los Arcos de Colmenar Viejo: tapa con la consumición, torreznos, cachopo, tortillas y carnes. Reservas por WhatsApp.">
+<meta property="og:title" content="Arcoteo Bar · Plaza de los Arcos, Colmenar Viejo">
+<meta property="og:description" content="Arcoteo Bar en la Plaza de los Arcos de Colmenar Viejo: tapa con la consumición, torreznos, cachopo, tortillas y carnes. Reservas por WhatsApp.">
+<meta property="og:image" content="img/fachada.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2716%27%20fill%3D%27%23a5452c%27/%3E%3Ctext%20x%3D%2732%27%20y%3D%2744%27%20font-size%3D%2732%27%20text-anchor%3D%27middle%27%20fill%3D%27%23f8f3ee%27%20font-family%3D%27Georgia%27%20font-weight%3D%27bold%27%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Lato:wght@400;700&display=swap">
+<style>
+/* Bajo los arcos de ladrillo de la plaza: arco de medio punto en las fotos, ladrillo y pizarra, rótulo condensado */
+:root{
+  --paper:#f8f3ee;--paper-2:#efe5db;--ink:#1f2a33;--ink-soft:#5c6670;
+  --accent:#a5452c;--accent-2:#a5452c;--on-accent:#fff;
+  --band:#1f2a33;--band-ink:#f3ece4;--band-tag:#e9a07a;
+  --line:rgba(31,42,51,.14);
+  --f-display:"Oswald",Impact,sans-serif;--f-body:"Lato",system-ui,sans-serif;
+  --hero-shape:999px 999px 14px 14px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent-2);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.tag{font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;color:var(--accent-2)}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,4.8vw,3rem);line-height:1.08;margin-top:8px}
+h3{font-size:1.25rem}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:10px;position:relative}
+.brand{text-decoration:none;line-height:1.05;min-width:0}
+.brand b{display:block;font-family:var(--f-display);font-weight:600;font-size:1.35rem;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{display:block;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+.nav{display:flex;align-items:center;gap:22px;flex:none}
+.nav a.l{text-decoration:none;font-weight:600;font-size:.93rem;color:var(--ink-soft)}
+.nav a.l:hover{color:var(--accent)}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);align-items:center;justify-content:center;cursor:pointer;padding:0;flex:none}
+.burger span{display:block;width:18px;height:2px;background:currentColor;position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:currentColor;transition:transform .2s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+.panel{position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 22px 30px -20px rgba(0,0,0,.4);padding:6px max(18px,env(safe-area-inset-right,0px)) 20px max(18px,env(safe-area-inset-left,0px))}
+.panel a{display:flex;justify-content:space-between;align-items:center;padding:14px 2px;text-decoration:none;font-weight:600;font-size:1.05rem;border-bottom:1px solid var(--line)}
+.panel a::after{content:"\2192";opacity:.45}
+.panel a.cta{justify-content:center;margin-top:16px;border:0;border-radius:999px;background:var(--accent);color:var(--on-accent);padding:14px}
+.panel a.cta::after{content:none}
+@media (max-width:860px){.nav a.l{display:none}.burger{display:inline-flex}.nav{gap:8px}}
+@media (min-width:861px){.panel{display:none!important}}
+@media (max-width:400px){.nav .btn.sm{padding:8px 12px;font-size:.84rem}.brand b{font-size:1.15rem}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:1rem;text-decoration:none;padding:13px 24px;border-radius:999px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.acc{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.sm{padding:8px 16px;font-size:.9rem}
+.btn svg{width:19px;height:19px;flex:none}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding-block:48px 70px}
+.hero-txt{min-width:0}
+.clock{display:inline-flex;align-items:center;gap:10px;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem;font-variant-numeric:tabular-nums}
+.clock i{width:10px;height:10px;border-radius:50%;background:#4f9a54;flex:none}
+.clock.closed i{background:#b4543a}
+.hero h1{font-size:clamp(2.7rem,7.6vw,5rem);line-height:1;margin-top:18px;letter-spacing:-.01em}
+.hero h1 em{display:block;font-style:normal;color:var(--accent)}
+.hero .lede{max-width:44ch;color:var(--ink-soft);margin:22px 0 28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.rating{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:24px;color:var(--ink-soft);font-size:.95rem}
+.rating b{font-family:var(--f-display);font-size:1.5rem;color:var(--ink)}
+.stars{color:var(--accent-2);letter-spacing:2px}
+.hero-pic{margin:0;position:relative;min-width:0}
+.hero-pic img{width:100%;aspect-ratio:4/4.4;object-fit:cover;border-radius:var(--hero-shape)}
+.hero-pic figcaption{position:absolute;left:14px;bottom:14px;background:var(--paper);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.88rem}
+.hero-card{min-width:0;aspect-ratio:4/4.2;border-radius:var(--hero-shape);background:var(--band);color:var(--band-ink);display:flex;flex-direction:column;justify-content:space-between;padding:28px;overflow:hidden;position:relative}
+.hero-card b{font-family:var(--f-display);font-size:clamp(6rem,20vw,11rem);line-height:.8;color:var(--band-tag)}
+.hero-card .tiles{display:flex;flex-wrap:wrap;gap:8px}
+.hero-card .tiles span{border:1px solid color-mix(in srgb,var(--band-ink) 35%,transparent);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:34px;padding-block:28px 56px}.hero-pic img{aspect-ratio:4/3.6}.hero-card{aspect-ratio:auto;min-height:300px}}
+.band{background:var(--band);color:var(--band-ink)}
+.band .wrap{padding-block:64px}
+.band .tag{color:var(--band-tag)}
+.items{display:grid;grid-template-columns:repeat(4,1fr);gap:0 24px;margin-top:30px;border-top:1px solid color-mix(in srgb,var(--band-ink) 25%,transparent)}
+.items article{padding:22px 0 24px;border-bottom:1px solid color-mix(in srgb,var(--band-ink) 25%,transparent);min-width:0}
+.items h3{font-size:1.2rem}
+.items p{margin:6px 0 0;opacity:.85;font-size:.95rem}
+@media (max-width:860px){.items{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.items{grid-template-columns:1fr}}
+.fotos .wrap{padding-block:80px}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.photos figure{margin:0;min-width:0}
+.photos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px}
+.photos figcaption{margin-top:10px;font-family:var(--f-display);font-size:1.1rem}
+@media (max-width:760px){.photos{grid-template-columns:1fr 1fr}.photos figure:first-child{grid-column:1/-1}.photos figure:first-child img{aspect-ratio:4/3}}
+.ops{background:var(--paper-2);border-block:1px solid var(--line)}
+.ops .wrap{padding-block:80px}
+.ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.op{border:1px solid var(--line);border-radius:18px;padding:24px;background:var(--paper);display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;transition:border-color .15s}
+.op:hover{border-color:var(--accent)}
+.op q{font-family:var(--f-display);font-size:1.18rem;line-height:1.35;quotes:"“" "”"}
+.op .who{margin-top:auto;font-size:.88rem;color:var(--ink-soft)}
+.ops-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:26px;color:var(--ink-soft)}
+.ops-foot b{font-family:var(--f-display);font-size:1.4rem;color:var(--ink)}
+@media (max-width:900px){.ops-grid{grid-template-columns:1fr}}
+.split .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;padding-block:80px}
+.split img{width:100%;border-radius:18px;object-fit:cover}
+.split p{color:var(--ink-soft);max-width:52ch}
+@media (max-width:860px){.split .wrap{grid-template-columns:1fr;gap:28px;padding-block:60px}}
+.visita .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding-block:80px}
+.visita .wrap>div{min-width:0}
+.hours{list-style:none;margin:22px 0 0;padding:0}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.hours li span:last-child{text-align:right}
+.hours li.today{color:var(--accent);font-weight:600}
+.hours li.today span:first-child::after{content:" · hoy"}
+.hours li.off span:last-child{opacity:.6}
+dl{margin:22px 0 0;display:grid;gap:18px}
+dt{font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--accent-2)}
+dd{margin:4px 0 0;font-size:1.1rem}
+.copy{margin-left:10px;font:600 .74rem var(--f-body);letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--line);background:none;color:var(--ink);padding:3px 10px;border-radius:6px;cursor:pointer}
+.visita .ctas{margin-top:28px}
+.visita img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px;margin-top:26px}
+@media (max-width:860px){.visita .wrap{grid-template-columns:1fr;gap:40px;padding-block:60px}}
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;padding-block:22px;font-size:.9rem;color:var(--ink-soft)}
+footer a{text-decoration:none}footer a:hover{color:var(--accent)}
+.wa-float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:25;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.4)}
+.wa-float svg{width:28px;height:28px}
+.hero h1{text-transform:uppercase;letter-spacing:.01em}.brand b{letter-spacing:.06em}.photos img{border-radius:999px 999px 14px 14px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.2 1.5Z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><b>ARCOTEO</b><small>Bar · Colmenar Viejo</small></a>
+    <nav class="nav" aria-label="Secciones">
+      <a class="l" href="#carta">Carta</a>
+      <a class="l" href="#fotos">Fotos</a>
+      <a class="l" href="#opiniones">Opiniones</a>
+      <a class="l" href="#visita">Horario</a>
+      <a class="btn sm acc" href="https://wa.me/34641361568?text=Hola%2C%20quer%C3%ADa%20reservar%20mesa" target="_blank" rel="noopener">Reservar</a>
+      <button class="burger" type="button" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="panel"><span></span></button>
+    </nav>
+    <div class="panel" id="panel" role="navigation" aria-label="Menú de la web" hidden>
+      <a href="#inicio">Inicio</a>
+      <a href="#carta">Carta</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#visita">Horario</a>
+      <a class="cta" href="https://wa.me/34641361568?text=Hola%2C%20quer%C3%ADa%20reservar%20mesa" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-txt">
+        <span class="clock" id="clock"><i></i><span id="clockTxt">Consulta el horario</span></span>
+        <h1>Tapeo bajo<em>los arcos.</em></h1>
+        <p class="lede">En plena Plaza de los Arcos: buenas tapas con cada consumición, raciones grandes y un negocio familiar que te atiende como en casa.</p>
+        <div class="ctas">
+          <a class="btn acc" href="https://wa.me/34641361568?text=Hola%2C%20quer%C3%ADa%20reservar%20mesa" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Reservar por WhatsApp</a>
+          <a class="btn" href="#visita">Horario y dirección</a>
+        </div>
+        <div class="rating"><b>4,9</b><span class="stars">★★★★★</span><span>47 reseñas en Google</span></div>
+      </div>
+      <figure class="hero-pic"><img src="img/fachada.jpg" alt="Arcoteo Bar bajo los arcos de ladrillo de la plaza" fetchpriority="high"><figcaption>Pl. de los Arcos, 1</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="band" id="carta">
+    <div class="wrap">
+      <div class="tag">De la carta</div>
+      <h2>Raciones grandes, buen precio</h2>
+      <div class="items">
+        <article><h3>Torreznos</h3><p>Crujientes, de los que hacen que vuelvas.</p></article>
+        <article><h3>Cachopo</h3><p>Súper tierno y bien cocinado.</p></article>
+        <article><h3>Tortilla de cabra y cebolla</h3><p>De patata, con queso de cabra y cebolla caramelizada.</p></article>
+        <article><h3>Entrecot madurado</h3><p>De vaca, con patatas y pimientos del Padrón.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="fotos" id="fotos">
+    <div class="wrap">
+      <div class="tag">Fotos</div>
+      <h2>Para picar y para quedarse</h2>
+      <div class="photos">
+        <figure><img src="img/torreznos.jpg" alt="Ración de torreznos" loading="lazy"><figcaption>Torreznos</figcaption></figure>
+        <figure><img src="img/gambas.jpg" alt="Plato de gambas" loading="lazy"><figcaption>Para compartir</figcaption></figure>
+        <figure><img src="img/postre.jpg" alt="Espresso martini y tarta" loading="lazy"><figcaption>El postre</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="ops" id="opiniones">
+    <div class="wrap">
+      <div class="tag">Lo que dicen en Google</div>
+      <h2>Nuestro nuevo bar en los arcos</h2>
+      <div class="ops-grid">
+        <a class="op" href="https://www.google.com/maps/place/?q=place_id:ChIJcf1YL9R9QQ0RL_q9Va8Fn2M" target="_blank" rel="noopener"><span class="stars">★★★★★</span><q>¡Nuevo descubrimiento! Tanto la atención como la comida de 10. En plena plaza de los arcos, un gran ambiente.</q><span class="who">Beatriz</span></a>
+        <a class="op" href="https://www.google.com/maps/place/?q=place_id:ChIJcf1YL9R9QQ0RL_q9Va8Fn2M" target="_blank" rel="noopener"><span class="stars">★★★★★</span><q>Los torreznos buenísimos, el cachopo súper tierno y muy bien cocinado.</q><span class="who">Beatriz</span></a>
+        <a class="op" href="https://www.google.com/maps/place/?q=place_id:ChIJcf1YL9R9QQ0RL_q9Va8Fn2M" target="_blank" rel="noopener"><span class="stars">★★★★★</span><q>Raciones grandes y a muy buen precio. Sin duda, nuestro nuevo bar en los arcos.</q><span class="who">Reseña en Google</span></a>
+      </div>
+      <div class="ops-foot">
+        <span><b>4,9</b> <span class="stars">★★★★★</span> · 47 reseñas en Google</span>
+        <a class="btn" href="https://www.google.com/maps/place/?q=place_id:ChIJcf1YL9R9QQ0RL_q9Va8Fn2M" target="_blank" rel="noopener">Ver todas en Google ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="visita" id="visita">
+    <div class="wrap">
+      <div>
+        <div class="tag">Horario</div>
+        <h2>De martes a domingo</h2>
+        <ul class="hours" id="hours">
+          <li data-d="1" class="off"><span>Lunes</span><span>Cerrado</span></li>
+          <li data-d="2"><span>Martes</span><span>18:00 – 0:00</span></li>
+          <li data-d="3"><span>Miércoles</span><span>18:00 – 0:00</span></li>
+          <li data-d="4"><span>Jueves</span><span>18:00 – 0:00</span></li>
+          <li data-d="5"><span>Viernes</span><span>18:00 – 0:00</span></li>
+          <li data-d="6"><span>Sábado</span><span>13:00 – 16:00 · 18:00 – 0:00</span></li>
+          <li data-d="0"><span>Domingo</span><span>13:00 – 17:00</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="tag">Dónde estamos</div>
+        <h2>Plaza de los Arcos, 1</h2>
+        <dl>
+          <div><dt>Dirección</dt><dd>Pl. de los Arcos, 1<br>28770 Colmenar Viejo, Madrid</dd></div>
+          <div><dt>Teléfono y WhatsApp</dt><dd><span id="tel">641 36 15 68</span><button class="copy" type="button" id="copyTel">Copiar</button></dd></div>
+          <div><dt>Servicio</dt><dd>Barra, mesas y terraza en la plaza</dd></div>
+        </dl>
+        <div class="ctas">
+          <a class="btn acc" href="https://wa.me/34641361568?text=Hola%2C%20quer%C3%ADa%20reservar%20mesa" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+          <a class="btn" href="https://www.google.com/maps/place/?q=place_id:ChIJcf1YL9R9QQ0RL_q9Va8Fn2M" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+        <img src="img/fachada.jpg" alt="Entrada de Arcoteo bajo los arcos" loading="lazy">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Arcoteo Bar · Colmenar Viejo</span>
+    <a href="https://lacedev.com" target="_blank" rel="noopener">Web hecha por Lace</a>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/34641361568?text=Hola%2C%20quer%C3%ADa%20reservar%20mesa" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),p=document.getElementById('panel'),h=document.querySelector('.top');
+  function set(o){p.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú');}
+  b.addEventListener('click',function(e){e.stopPropagation();set(p.hidden);});
+  p.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+  document.addEventListener('click',function(e){if(!p.hidden&&!h.contains(e.target))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden){set(false);b.focus();}});
+  window.addEventListener('resize',function(){if(innerWidth>860)set(false);});
+  var H={"1": [], "2": [[1080, 1440]], "3": [[1080, 1440]], "4": [[1080, 1440]], "5": [[1080, 1440]], "6": [[780, 960], [1080, 1440]], "0": [[780, 1020]]};
+  function f(m){m=m%1440;return Math.floor(m/60)+':'+('0'+m%60).slice(-2)}
+  try{
+    var n=new Date(),d=n.getDay(),m=n.getHours()*60+n.getMinutes();
+    var el=document.querySelector('#hours li[data-d="'+d+'"]');if(el)el.classList.add('today');
+    var open=null,prev=H[String((d+6)%7)]||[];
+    prev.forEach(function(s){if(s[1]>1440&&m<s[1]-1440)open=s[1];});
+    (H[String(d)]||[]).forEach(function(s){if(m>=s[0]&&m<s[1])open=s[1];});
+    var c=document.getElementById('clock'),t=document.getElementById('clockTxt');
+    if(open!==null){t.textContent='Abierto ahora · hasta las '+f(open);}
+    else{
+      c.classList.add('closed');var nx=null;
+      (H[String(d)]||[]).forEach(function(s){if(nx===null&&s[0]>m)nx=s[0];});
+      if(nx!==null)t.textContent='Cerrado · abrimos hoy a las '+f(nx);
+      else{for(var i=1;i<8;i++){var dd=(d+i)%7,sl=H[String(dd)]||[];if(sl.length){var nm=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'][dd];t.textContent='Cerrado · abrimos '+(i===1?'mañana':'el '+nm)+' a las '+f(sl[0][0]);break;}}}
+    }
+  }catch(e){}
+  document.getElementById('copyTel').addEventListener('click',function(){
+    var bt=this,txt=document.getElementById('tel').textContent;
+    var done=function(){bt.textContent='Copiado';setTimeout(function(){bt.textContent='Copiar'},1600)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('tel'));var s=getSelection();s.removeAllRanges();s.addRange(r)};
+    try{navigator.clipboard.writeText(txt).then(done,sel)}catch(e){sel()}
+  });
+})();
+</script>
+</body>
+</html>
