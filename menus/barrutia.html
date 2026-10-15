@@ -1,0 +1,38 @@
+<style id="lace-menu-css">
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+.lm-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer;flex:none;padding:0}
+.lm-btn span{display:block;width:18px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:background .2s}
+.lm-btn span::before,.lm-btn span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s}
+.lm-btn span::before{top:-6px}.lm-btn span::after{top:6px}
+.lm-btn[aria-expanded="true"] span{background:transparent}
+.lm-btn[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.lm-btn[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+.lm-panel{position:absolute;left:0;right:0;top:100%;padding:6px max(18px,env(safe-area-inset-right,0px)) 20px max(18px,env(safe-area-inset-left,0px));box-shadow:0 22px 30px -20px rgba(0,0,0,.45);border-bottom:1px solid rgba(127,127,127,.25);max-height:calc(100vh - 90px);overflow:auto;text-align:left}
+.lm-panel a{display:flex;justify-content:space-between;align-items:center;padding:14px 2px;text-decoration:none;font-weight:600;font-size:1.05rem;border-bottom:1px solid rgba(127,127,127,.22);color:inherit}
+.lm-panel a::after{content:"\2192";opacity:.45}
+.lm-panel a.lm-cta{justify-content:center;margin-top:16px;border:0;border-radius:999px;padding:14px}
+.lm-panel a.lm-cta::after{content:none}
+@media (max-width:820px){.lm-btn{display:inline-flex}}
+@media (min-width:821px){.lm-panel{display:none!important}}
+@media (prefers-reduced-motion:reduce){.lm-btn span,.lm-btn span::before,.lm-btn span::after{transition:none}}
+</style>
+<script id="lace-menu-js">
+(function(){
+var items=[["Inicio", ".hero", "inicio-top"], ["La paella del finde", "#paella", ""], ["La carta", "#carta", ""], ["Nuestra historia", "#historia", ""], ["Reseñas", ".ops", "resenas"], ["Horario y cómo llegar", "#visita", ""]];
+var h=document.querySelector('header');if(!h)return;
+var host=h.querySelector('nav')||h.querySelector('.wrap')||h;
+var cta=h.querySelector('a[href*="wa.me"]');
+var b=document.createElement('button');b.type='button';b.className='lm-btn';b.setAttribute('aria-label','Abrir menú');b.setAttribute('aria-expanded','false');b.setAttribute('aria-controls','lm-panel');b.innerHTML='<span></span>';
+var p=document.createElement('nav');p.id='lm-panel';p.className='lm-panel';p.hidden=true;p.setAttribute('aria-label','Menú de la web');
+var bs=getComputedStyle(document.body);p.style.background=bs.backgroundColor;p.style.color=bs.color;
+items.forEach(function(it){var el=document.querySelector(it[1]);if(!el)return;if(!el.id)el.id=it[2];var a=document.createElement('a');a.href='#'+el.id;a.textContent=it[0];p.appendChild(a);});
+if(cta){var c=document.createElement('a');c.href=cta.href;c.target='_blank';c.rel='noopener';c.className='lm-cta';c.textContent='Reservar por WhatsApp';var cc=getComputedStyle(cta);var bg=cc.backgroundColor;if(!bg||bg==='transparent'||/rgba\(.*,\s*0\)$/.test(bg)){c.style.background=bs.color;c.style.color=bs.backgroundColor;}else{c.style.background=bg;c.style.color=cc.color;}p.appendChild(c);}
+host.appendChild(b);h.appendChild(p);
+function set(open){p.hidden=!open;b.setAttribute('aria-expanded',open?'true':'false');b.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');}
+b.addEventListener('click',function(e){e.stopPropagation();set(p.hidden);});
+p.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+document.addEventListener('click',function(e){if(!p.hidden&&!h.contains(e.target))set(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden){set(false);b.focus();}});
+window.addEventListener('resize',function(){if(window.innerWidth>820)set(false);});
+})();
+</script>
